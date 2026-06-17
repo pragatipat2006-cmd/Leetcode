@@ -1,0 +1,17 @@
+int findNumbers(int* nums, int numsSize) {
+    int count;
+    int c = 0;
+    for(int i=0;i<numsSize;i++)
+    {
+        count = 0;
+        while(nums[i]>0)
+        {
+            count++;
+            nums[i]=nums[i]/10;
+        } 
+        if(count%2==0)
+            c++;   
+    }
+    return c;
+    
+}
