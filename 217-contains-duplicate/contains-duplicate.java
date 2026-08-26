@@ -13,15 +13,32 @@
 //     }
 // }
 
+
+// class Solution {
+//     public boolean containsDuplicate(int[] nums) {
+//         HashMap<Integer,Integer> map = new HashMap<>();
+//         for(int i = 0; i < nums.length; i++){
+//             int temp = nums[i];
+//             if(map.containsKey(temp)){
+//                 return true;
+//             }
+//             map.put(nums[i],i);
+//         }
+//         return false;
+//     }
+// }
+
 class Solution {
     public boolean containsDuplicate(int[] nums) {
-        HashMap<Integer,Integer> map = new HashMap<>();
-        for(int i = 0; i < nums.length; i++){
+        HashSet<Integer> set = new HashSet<>();
+        for(int i = 0; i < nums.length ; i++){
             int temp = nums[i];
-            if(map.containsKey(temp)){
+            
+            if(set.contains(nums[i])){
                 return true;
             }
-            map.put(nums[i],i);
+
+            set.add(nums[i]);
         }
         return false;
     }
